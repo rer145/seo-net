@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages>
+    <page url="/default.aspx">
+        <default>
+            <title>Test SEO page</title>
+            <keywords>test, seo, page, keywords</keywords>
+            <description>This is the test SEO page with the handler.</description>
+        </default>
+        <conditions>
+            <condition parameter="final" operator="Equals" value="1" type="QueryString">
+                <title>Production SEO Page</title>
+                <keywords>production, seo, page</keywords>
+                <description>Final full version of the SEO page with the handler</description>
+            </condition>
+        </conditions>
+    </page>
+    <page url="/newfolder1/webform1.aspx">
+        <default>
+            <title>SEO page in a new folder</title>
+            <keywords>i, don't, care, what, the, terms are</keywords>
+            <description>My word, this app is amazing!</description>
+        </default>
+    </page>
+</pages>
