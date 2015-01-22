@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RonsHouse.SeoNet.Tests.Web", "RonsHouse.SeoNet.Tests.Web\RonsHouse.SeoNet.Tests.Web.csproj", "{0574B92D-FDEA-466E-BE76-998C5C20830B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RonsHouse.SeoNet", "RonsHouse.SeoNet\RonsHouse.SeoNet.csproj", "{0B02808E-557E-4E5F-AB0D-BF8E20003EF8}"
