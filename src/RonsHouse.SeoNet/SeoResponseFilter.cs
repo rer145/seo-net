@@ -51,7 +51,8 @@ namespace RonsHouse.SeoNet
 
                     foreach (PageCondition condition in page.Conditions)
                     {
-                        string currentValue = String.Empty;     //current parameter to compare to condition
+                        //TODO: update to be able to compare objects, not just strings (refer to OneRing comparison)
+						string currentValue = String.Empty;     //current parameter to compare to condition
                         switch (condition.ParameterType)
                         {
                             case ConditionParameterType.QueryString:
@@ -73,6 +74,9 @@ namespace RonsHouse.SeoNet
                             case ConditionOperator.Equals:
                                 conditionMet = (currentValue == condition.Value);
                                 break;
+							case ConditionOperator.NotEquals:
+								conditionMet = (currentValue != condition.Value);
+								break;
                         }
 
                         if (conditionMet)

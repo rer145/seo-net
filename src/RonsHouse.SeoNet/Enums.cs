@@ -4,7 +4,8 @@ namespace RonsHouse.SeoNet
 {
     public enum ConditionOperator
     {
-        Equals
+        Equals,
+		NotEquals
     }
 
     public enum ConditionParameterType

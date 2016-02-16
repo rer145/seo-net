@@ -21,4 +21,11 @@
             <description>My word, this app is amazing!</description>
         </default>
     </page>
+	<page url="/webform1.aspx">
+		<default>
+			<title>testing title with basePage</title>
+			<keywords></keywords>
+			
+		</default>
+	</page>
 </pages>

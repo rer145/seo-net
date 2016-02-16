@@ -10,7 +10,9 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    Tersdt
+    Tersdt<br />
+
+		<img src="/zombie.jpg" border="1" />
     </div>
     </form>
 </body>

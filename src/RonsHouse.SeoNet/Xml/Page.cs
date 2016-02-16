@@ -39,10 +39,12 @@ namespace RonsHouse.SeoNet.Xml
                 this.Url = url;
 
                 XmlNode defaultNode = page.SelectSingleNode("default");
-                //TODO: add error checking
-                this.DefaultSeoValues.Keywords = defaultNode.SelectSingleNode("keywords").InnerText;
-                this.DefaultSeoValues.Description = defaultNode.SelectSingleNode("description").InnerText;
-                this.DefaultSeoValues.Title = defaultNode.SelectSingleNode("title").InnerText;
+				if (defaultNode != null)
+				{
+					this.DefaultSeoValues.Keywords = defaultNode.SelectSingleNode("keywords") == null ? String.Empty : defaultNode.SelectSingleNode("keywords").InnerText;
+					this.DefaultSeoValues.Description = defaultNode.SelectSingleNode("description") == null ? String.Empty : defaultNode.SelectSingleNode("description").InnerText;
+					this.DefaultSeoValues.Title = defaultNode.SelectSingleNode("title") == null ? String.Empty : defaultNode.SelectSingleNode("title").InnerText;
+				}
 
                 //load up conditions
                 XmlNodeList conditions = page.SelectNodes("conditions/condition");
@@ -52,15 +54,17 @@ namespace RonsHouse.SeoNet.Xml
                     {
                         PageCondition pc = new PageCondition();
 
-                        pc.ParameterName = condition.Attributes["parameter"].Value;
-                        pc.Operator = (ConditionOperator)Enum.Parse(typeof(ConditionOperator), condition.Attributes["operator"].Value);
+                        pc.ParameterName = condition.Attributes["parameter"] == null ? String.Empty : condition.Attributes["parameter"].Value;
+                        //pc.Operator = condition.Attributes["operator"] == null ? ConditionOperator.Equals : (ConditionOperator)Enum.Parse(typeof(ConditionOperator), condition.Attributes["operator"].Value);
+						//pc.ParameterType = condition.Attributes["type"] == null ? ConditionParameterType.QueryString : (ConditionParameterType)Enum.Parse(typeof(ConditionParameterType), condition.Attributes["type"].Value);
+						pc.Operator = (ConditionOperator)Enum.Parse(typeof(ConditionOperator), condition.Attributes["operator"].Value);
                         pc.ParameterType = (ConditionParameterType)Enum.Parse(typeof(ConditionParameterType), condition.Attributes["type"].Value);
-                        pc.Value = condition.Attributes["value"].Value;
+                        pc.Value = condition.Attributes["value"] == null ? String.Empty : condition.Attributes["value"].Value;
 
                         pc.SeoValues = new SeoValues();
-                        pc.SeoValues.Description = condition.SelectSingleNode("description").InnerText;
-                        pc.SeoValues.Keywords = condition.SelectSingleNode("keywords").InnerText;
-                        pc.SeoValues.Title = condition.SelectSingleNode("title").InnerText;
+                        pc.SeoValues.Description = condition.SelectSingleNode("description") == null ? String.Empty : condition.SelectSingleNode("description").InnerText;
+                        pc.SeoValues.Keywords = condition.SelectSingleNode("keywords") == null ? String.Empty : condition.SelectSingleNode("keywords").InnerText;
+                        pc.SeoValues.Title = condition.SelectSingleNode("title") == null ? String.Empty : condition.SelectSingleNode("title").InnerText;
 
                         this.Conditions.Add(pc);
                     }
