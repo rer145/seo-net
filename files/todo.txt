@@ -1,0 +1,17 @@
+-create storage providers for where to store data
+	-sql, xml, other db, etc.
+-update management page with nice styles (load remotely?)
+-do performance tests (add caching to both public and admin areas?)
+-add properties for pages/folders to exclude
+	-use the <location> tag in web.config?
+-create a generic handler for all the management pages (ala elmah)
+X-test using Xml Serialization and Deserialization for obtaining data
+-automatically add the site's name to the beginning/end of the page's title (using config value)
+-automatically include other header tag information if it doesn't exist (author info, etc.)
+	-setup global config settings for these
+-allow OverrideInPageSeo flag for individual pages as well as globally
+-add reference for SimpleDB for SqlServerStorageProvider
+-add database scripts and stored procedures
+-build separate site for management instead of within the handler
+	-include option to clear out cache values (or include in seo.axd?)
+	-create single page informational page only using the /seo url
