@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RonsHouse.SeoNet.Tests.Web"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RonsHouse.SeoNet", "RonsHouse.SeoNet\RonsHouse.SeoNet.csproj", "{0B02808E-557E-4E5F-AB0D-BF8E20003EF8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D8707EAC-80FE-4ACC-9D21-AC5CF2035F50}"
+	ProjectSection(SolutionItems) = preProject
+		..\doc\readme.txt = ..\doc\readme.txt
+		..\files\todo.txt = ..\files\todo.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
